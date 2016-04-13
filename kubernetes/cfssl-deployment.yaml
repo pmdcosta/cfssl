@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: cfssl
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cfssl
+    spec:
+      containers:
+      - name: cfssl
+        image: pmdcosta/cfssl:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 80
+          name: http
+        volumeMounts:
+            - mountPath: /ssl/ca
+              name: qold-ca-key
+      volumes:
+        - name: qold-ca-key
+            secretName: qold-ca-key
