@@ -24,4 +24,5 @@ spec:
               name: qold-ca-key
       volumes:
         - name: qold-ca-key
+          secret:
             secretName: qold-ca-key
