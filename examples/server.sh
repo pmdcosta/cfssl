@@ -1,1 +1,0 @@
-echo '{"CN":"rabbitmq.qold.co","hosts":["rabbitmq.qold.co,rabbit.qold.co,cloud.qold.co,rabbitmq"],"key":{"algo":"rsa","size":2048}}' | cfssl gencert -ca=/ssl/ca/ca.pem -ca-key=/ssl/ca/ca-key.pem -config=/ssl/ca-config.json -profile=server -hostname="rabbitmq.qold.co,rabbit.qold.co,cloud.qold.co,rabbitmq" - | cfssljson -bare server
