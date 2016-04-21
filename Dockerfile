@@ -4,7 +4,8 @@ MAINTAINER Pedro Costa
 RUN apk add --update bash
 
 RUN mkdir -p /ssl/data
-ADD config /ssl/config
+ADD config /ssl/
 WORKDIR /ssl/
 
-CMD ["serve", "-address=0.0.0.0", "-ca=/ssl/data/ca/ca.pem", "-ca-key=/ssl/data/ca/ca-key.pem", "-config=/ssl/config/ca-config.json"]
+ENTRYPOINT ["/bin/bash"]
+CMD ["/ssl/create.sh"]
