@@ -15,7 +15,7 @@ mkdir gateway
 mv *.pem gateway
 rm *.csr
 
-echo '{"CN":"gateway","hosts":[""],"key":{"algo":"rsa","size":2048}}' | cfssl gencert -ca=/ssl/data/ca/ca.pem -ca-key=/ssl/data/ca/ca-key.pem -config=/ssl/config/ca-config.json -profile=client - | cfssljson -bare client
+echo '{"CN":"cluster","hosts":[""],"key":{"algo":"rsa","size":2048}}' | cfssl gencert -ca=/ssl/data/ca/ca.pem -ca-key=/ssl/data/ca/ca-key.pem -config=/ssl/config/ca-config.json -profile=client - | cfssljson -bare client
 mkdir cluster
 mv *.pem cluster
 rm *.csr
