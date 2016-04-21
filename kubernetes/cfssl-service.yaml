@@ -5,10 +5,9 @@ metadata:
   labels:
     app: cfssl
 spec:
-#  externalIPs: [139.59.175.213]
+#  externalIPs: [139.59.166.134,139.59.166.152]
   ports:
   - port: 8080
     name: http
   selector:
     app: cfssl
-
