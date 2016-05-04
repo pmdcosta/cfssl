@@ -12,8 +12,11 @@ spec:
       containers:
         - name: cfssl
           image: pmdcosta/cfssl:latest
+          command:
+          - "sleep"
+          - "3600"
           volumeMounts:
-            - mountPath: /ssl/production/ca
+            - mountPath: /ssl/data/production/ca
               name: ca
       volumes:
         - name: ca
