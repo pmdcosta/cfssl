@@ -19,3 +19,5 @@ kubectl create secret generic qold-ssl-ca-key --from-file=production/ca/ca-key.p
 kubectl create secret generic rabbitmq-ssl-server --from-file=production/server/server.pem --from-file=production/server/server-key.pem
 ## RabbitMQ client credentials
 kubectl create secret generic rabbitmq-ssl-client --from-file=production/cluster/client.pem --from-file=production/cluster/client-key.pem
+## RabbitMQ gateway credentials
+kubectl create secret generic rabbitmq-ssl-gateway --from-file=production/gateway/client.pem --from-file=production/gateway/client-key.pem

@@ -10,4 +10,4 @@ WORKDIR /ssl/
 ADD config /ssl/config
 ADD scripts /ssl/scripts
 
-CMD ["sleep 3600"]
+CMD ["sleep", "infinity"]

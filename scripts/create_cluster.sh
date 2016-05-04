@@ -12,3 +12,7 @@ rm *.csr
 echo '{"CN":"cluster","hosts":[""],"key":{"algo":"rsa","size":2048}}' | cfssl gencert -ca=/ssl/data/production/ca/ca.pem -ca-key=/ssl/data/production/ca/ca-key.pem -config=/ssl/config/ca-config.json -profile=client - | cfssljson -bare client
 mv *.pem /ssl/data/production/cluster
 rm *.csr
+# Create RabbitMQ production gateway credentials
+echo '{"CN":"gateway","hosts":[""],"key":{"algo":"rsa","size":2048}}' | cfssl gencert -ca=/ssl/data/production/ca/ca.pem -ca-key=/ssl/data/production/ca/ca-key.pem -config=/ssl/config/ca-config.json -profile=client - | cfssljson -bare client
+mv *.pem /ssl/data/production/gateway
+rm *.csr
