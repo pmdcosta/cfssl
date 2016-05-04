@@ -1,11 +1,13 @@
 FROM cfssl/cfssl:minimal.latest
 MAINTAINER Pedro Costa
 
-RUN apk add --update bash
+ENTRYPOINT []
+RUN apk add --update bash nano
 
-RUN mkdir -p /ssl/data
-ADD config /ssl/
+RUN mkdir /ssl/
 WORKDIR /ssl/
 
-ENTRYPOINT ["/bin/bash"]
-CMD ["/ssl/create.sh"]
+ADD config /ssl/config
+ADD scripts /ssl/scripts
+
+CMD ["sleep 3600"]
