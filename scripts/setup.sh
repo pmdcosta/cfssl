@@ -18,4 +18,4 @@ echo ">> Creating Cluster"
 /ssl/scripts/create_cluster.sh
 echo ">> Changing permissions"
 chmod -R +r *
-echo ">> Done."
+echo ">> Done"
